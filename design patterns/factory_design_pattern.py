@@ -43,9 +43,6 @@ the desired string representation for a format changes because the representatio
 '''
 
 
-
-
-
 ###################################################################################################################################################
 ##################### Example 1 #####################
 
@@ -236,3 +233,29 @@ class SongSerializer:
     def serialize(self, song: Song, format: str=None):
         serializer = get_serializer(format)
         return serializer(song)
+
+
+
+'''
+########
+Advantages of using Factory method: 
+#######
+We can easily add new types of products without disturbing the existing client code.
+Generally, tight coupling is being avoided between the products and the creator classes and objects.
+
+#############
+Disadvantages of using Factory method:
+############
+To create a particular concrete product object, the client might have to sub-class the creator class.
+
+You end up with a huge number of small files i.e, cluttering the files.
+
+In a Graphics system, depending upon the user's input it can draw different shapes like rectangles, Square, Circle, etc. But for the ease of both 
+developers as well as the client, we can use the factory method to create the instance depending upon the user's input. Then we don't have to 
+change the client code for adding a new shape.
+
+On a Hotel booking site, we can book a slot for 1 room, 2 rooms, 3 rooms, etc. Here user can input the number of rooms he wants to book. 
+Using the factory method, we can create a factory class Any Rooms which will help us to create the instance depending upon the user's input. 
+Again we don't have to change the client's code for adding the new facility.
+
+'''
